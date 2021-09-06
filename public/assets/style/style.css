@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+body {
+  position: relative;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  font-family: Courier, monospace;
+}
+.fullHeight {
+  padding: 100px 50px 20px 50px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+}
+
+.to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
