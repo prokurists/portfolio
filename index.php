@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../private/DBdata.php';
+include __DIR__ . 'DBdata.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -139,7 +139,7 @@ include __DIR__ . '/../private/DBdata.php';
         <h1 class="uk-heading-divider ">Atsauksmes</h1>
         <div class="uk-child-width-1-2@s" uk-grid uk-scrollspy="cls: uk-animation-slide-top; target: .uk-card; delay: 300; repeat: false">
 
-            <form action="/private/api.php" onsubmit="postRequest(event, this, addNewReview);" class="uk-card">
+            <form action="api.php" onsubmit="postRequest(event, this, addNewReview);" class="uk-card">
                 <fieldset class="uk-fieldset">
                     <div class="uk-margin">
                         <input class="uk-input" type="text" name="name" placeholder="Vārds" required>
@@ -165,7 +165,7 @@ include __DIR__ . '/../private/DBdata.php';
             <div>
                 <div class="uk-card uk-card-default uk-card-body">
                     <h3 class="uk-card-title">Rakstīt ziņu...</h3>
-                    <form action="/private/api.php" onsubmit="postRequest(event, this, addNewMessage);">
+                    <form action="api.php" onsubmit="postRequest(event, this, addNewMessage);">
                         <fieldset class="uk-fieldset">
                             <div class="uk-margin">
                                 <input class="uk-input" type="email" name="e-mail" placeholder="E-pasts" required>
