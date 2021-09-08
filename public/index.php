@@ -48,7 +48,7 @@ include __DIR__ . '/../private/DBdata.php';
         <h1 class="uk-heading-divider" id="typewritter-hello"></h1>
 
         <div>
-            <div class="uk-card uk-card-default uk-card-body    " uk-scrollspy="cls: uk-animation-slide-right; repeat: false">
+            <div class="uk-card uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-right; repeat: false">
                 <img class="uk-border-pill uk-align-left" src="assets/images/me.png" width="200" height="200" alt="Border pill">
 
                 <p class="uk-text-default ">
@@ -86,6 +86,8 @@ include __DIR__ . '/../private/DBdata.php';
                     <ul class="uk-list uk-list-striped">
                         <li>PHP: <strong>Junior</strong></li>
                         <li>MySQL: <strong>Junior</strong></li>
+                        <li>Javascript: <strong>Junior</strong></li>
+
                     </ul>
                 </div>
             </div>
@@ -135,9 +137,9 @@ include __DIR__ . '/../private/DBdata.php';
     </div>
     <div id="reviews" class="container-fluid fullHeight">
         <h1 class="uk-heading-divider ">Atsauksmes</h1>
-        <div class="uk-child-width-1-2@s" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true">
+        <div class="uk-child-width-1-2@s" uk-grid uk-scrollspy="cls: uk-animation-slide-top; target: .uk-card; delay: 300; repeat: false">
 
-            <form action="/private/api.php?" onsubmit="postRequest(event, this, addNewReview);">
+            <form action="/private/api.php" onsubmit="postRequest(event, this, addNewReview);" class="uk-card">
                 <fieldset class="uk-fieldset">
                     <div class="uk-margin">
                         <input class="uk-input" type="text" name="name" placeholder="Vārds" required>
@@ -159,14 +161,14 @@ include __DIR__ . '/../private/DBdata.php';
         <h1 class="uk-heading-divider ">Saziņa</h1>
 
 
-        <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
+        <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid uk-scrollspy="cls: uk-animation-slide-top; target: .uk-card; delay: 300; repeat: false">
             <div>
                 <div class="uk-card uk-card-default uk-card-body">
                     <h3 class="uk-card-title">Rakstīt ziņu...</h3>
-                    <form action="/private/api.php?" onsubmit="postRequest(event, this, addNewMessage);">
+                    <form action="/private/api.php" onsubmit="postRequest(event, this, addNewMessage);">
                         <fieldset class="uk-fieldset">
                             <div class="uk-margin">
-                                <input class="uk-input" type="text" name="e-mail" placeholder="E-pasts" required>
+                                <input class="uk-input" type="email" name="e-mail" placeholder="E-pasts" required>
                             </div>
                             <div class="uk-margin">
                                 <textarea class="uk-textarea" rows="5" name="message" placeholder="Jautājums.." required></textarea>
@@ -179,15 +181,28 @@ include __DIR__ . '/../private/DBdata.php';
             </div>
 
             <div>
-                <div class="uk-card uk-card-secondary uk-card-body uk-card-between">
+                <div class="uk-card uk-card-secondary uk-card-body ">
                     <h3 class="uk-card-title">Saziņai</h3>
-                    <span uk-icon="icon: mail; ratio: 3"></span><a class="uk-link-heading" href="mailto:aleksejs@pavlovs.lv"> Email Us</a><br>
+                    <div class="uk-text-left uk-child-width-1-2@s" uk-grid>
+                        <div>
+                            <div class="uk-card">
+                                <span uk-icon=" icon: mail; ratio: 3"></span><a class="uk-link-heading" href="mailto:aleksejs@pavlovs.lv"> Email me</a><br>
 
-                    <span uk-icon="icon: whatsapp; ratio: 3"></span><a class="uk-link-heading" href="tel:+37125994741"> Click to Call!</a><br>
+                                <span uk-icon="icon: whatsapp; ratio: 3"></span><a class="uk-link-heading" href="https://wa.me/+37125994741"> Whatsapp me</a><br>
 
-                    <span uk-icon="icon:  github-alt; ratio: 3"></span><a class="uk-link-heading" href=""> GitHub</a><br>
+                                <span uk-icon="icon:  github-alt; ratio: 3"></span><a class="uk-link-heading" href="https://github.com/prokurists"> GitHub</a><br>
 
-                    <span uk-icon="icon:  linkedin; ratio: 3"></span><a class="uk-link-heading" href=""> LinkedIn</a><br>
+                                <span uk-icon="icon:  linkedin; ratio: 3"></span><a class="uk-link-heading" href="https://www.linkedin.com/in/aleksejs-pavlovs-77aa34a5/"> LinkedIn</a><br>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <img src="assets/images/contact.svg" uk-svg>
+
+                            </div>
+                        </div>
+                    </div>
+
 
 
                 </div>

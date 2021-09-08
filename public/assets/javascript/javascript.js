@@ -49,23 +49,22 @@ function getRequest(url, callback = false) {
 
 
 function addNewReview(response, form) {
-    // res - atbilde no servera JS objekta formātā (PHP -> json_decode())
-    let res = JSON.parse(response);
-
-    if (res.status === true) {
-
+    if (response.status === true) {
+        UIkit.notification({message: "<span uk-icon='icon: check'></span>Paldies! Atsauksmes nosūtīta!", status: "success"})
         form.querySelector('input').value = '';
+        form.querySelector('textarea').value = '';
+
     }
 }
 
 
 function addNewMessage(response, form) {
-    // res - atbilde no servera JS objekta formātā (PHP -> json_decode())
-    let res = JSON.parse(response);
 
-    if (res.status === true) {
-
+    if (response.status === true) {
+        UIkit.notification({message: "<span uk-icon='icon: check'></span>Paldies! Ziņa nosūtīta!", status: "success"})
         form.querySelector('input').value = '';
+        form.querySelector('textarea').value = '';
+
     }
 }
 

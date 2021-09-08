@@ -1,4 +1,5 @@
 <?php
+include_once "DBdata.php";
 $DBdata = new DBdata();
 
 
@@ -18,7 +19,7 @@ if (
     is_string($_POST['message']) &&
     !empty($_POST['message'])
 ) {
-    $output = $DBdata->addReview($_POST['e-mail'], $_POST['message']);
+    $output = $DBdata->addMessage($_POST['e-mail'], $_POST['message']);
 }
 
 echo json_encode($output, JSON_PRETTY_PRINT);

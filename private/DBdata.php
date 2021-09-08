@@ -29,18 +29,21 @@ class DBdata
 
     function addReview($email, $review)
     {
-        $sql = "INSERT INTO reviews (email, review)
-VALUES ('$email', '$review')";
+        $email = $this->test_input($email);
+        $review = $this->test_input($review);
+
+        $sql = "
+        INSERT INTO reviews (email, review)
+        VALUES ('$email', '$review')";
 
         if ($this->conn->query($sql) === TRUE) {
             return [
-                'id' => $this->id,
                 'status' => true
             ];
         } else {
             return [
                 'status' => false,
-                'message' => "in class problem"
+                'message' => "Problem in db class"
             ];
         }
     }
@@ -48,19 +51,29 @@ VALUES ('$email', '$review')";
 
     function addMessage($email, $text)
     {
-        $sql = "INSERT INTO contacts (email, text)
-VALUES ('$email', '$text')";
+        $email = $this->test_input($email);
+        $text = $this->test_input($text);
+        $sql = "
+        INSERT INTO contacts (email, text)
+        VALUES ('$email', '$text')";
 
         if ($this->conn->query($sql) === TRUE) {
             return [
-                'id' => $this->id,
                 'status' => true
             ];
         } else {
             return [
                 'status' => false,
-                'message' => "in class problem"
+                'message' => "Problem in db class"
             ];
         }
+    }
+
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 }
