@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . 'DBdata.php';
+include __DIR__ . '/classes/DBdata.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,21 +10,22 @@ include __DIR__ . 'DBdata.php';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="assets/style/style.css">
+
 </head>
 
 <body>
-    <nav class="uk-container uk-navbar" uk-sticky>
+    <nav class="uk-navbar uk-background-default" uk-sticky>
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
                 <li class="uk-active">
-                    <a href="#">PAVLOVS<strong>.LV</strong></a>
+                    <a href="#" id="typewritter-hello"></a>
                 </li>
             </ul>
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@s">
-                <li><a class="uk-text-large" href="#profils">Par mani</a></li>
-                <li><a class="uk-text-large" href="#digital">Digitālās pieredze</a></li>
+                <li><a class="uk-text-large" href="#">Par mani</a></li>
+                <li><a class="uk-text-large" href="#digital">Digitālā pieredze</a></li>
                 <li><a class="uk-text-large" href="#reviews">Atsauksmes</a></li>
                 <li><a class="uk-text-large" href="#contact">Saziņa</a></li>
             </ul>
@@ -36,8 +37,8 @@ include __DIR__ . 'DBdata.php';
     <div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
         <div class="uk-offcanvas-bar">
             <ul class="uk-nav">
-                <li><a class="uk-text-large" href="#profils">Par mani</a></li>
-                <li><a class="uk-text-large" href="#digital">Digitālās zināšanas</a></li>
+                <li><a class="uk-text-large" href="#">Par mani</a></li>
+                <li><a class="uk-text-large" href="#digital">Digitālā pieredze</a></li>
                 <li><a class="uk-text-large" href="#reviews">Atsauksmes</a></li>
                 <li><a class="uk-text-large" href="#contact">Saziņa</a></li>
             </ul>
@@ -45,17 +46,16 @@ include __DIR__ . 'DBdata.php';
     </div>
 
     <div id="profils" class="container-fluid fullHeight">
-        <h1 class="uk-heading-divider" id="typewritter-hello"></h1>
 
         <div>
             <div class="uk-card uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-right; repeat: false">
                 <img class="uk-border-pill uk-align-left" src="assets/images/me.png" width="200" height="200" alt="Border pill">
 
-                <p class="uk-text-default ">
-
-                    Esmu elektroniskās komercijas speciālists uzņēmumā LMT Retail & Logistics SIA.
-                    Mani galvenie pienākumi ir apkalpot korporatīvos klientus attālināti, izmantojot uzņēmumu iekšējo CRM un citas sistēmas.
-                    Programmēšanu apgūstu pašapmācības ceļā - kursos un @CODECADEMY plaftormā.
+                <p class="uk-text-default">
+                    Sveiki, mani sauc Aleksejs Pavlovs.<br>
+                    Esmu elektroniskās komercijas speciālists uzņēmumā LMT Retail & Logistics SIA.<br>
+                    Mani galvenie pienākumi ir apkalpot korporatīvos klientus attālināti, izmantojot uzņēmumu iekšējo CRM un citas sistēmas.<br>
+                    Programmēšanu apgūstu pašapmācības ceļā - kursos un @CODECADEMY plaftormā.<br>
                 </p>
             </div>
         </div>
@@ -64,13 +64,13 @@ include __DIR__ . 'DBdata.php';
         <div class="uk-grid-divider uk-child-width-expand@s uk-grid-match" uk-grid>
 
             <div>
-                <div class="uk-card-body uk-card-default">Risinājumus e-komercijā pasūtījuma apstrādes laika mazināšanai.</div>
+                <div class="uk-card-body uk-card-default uk-box-shadow-hover-large uk-padding">Risinājumus pasūtījuma apstrādes laika mazināšanai elektroniskajā komercijā.</div>
             </div>
             <div>
-                <div class="uk-card-body uk-card-primary">Individuālo pieeju katram projektam un klientam.</div>
+                <div class="uk-card-body uk-card-primary uk-box-shadow-hover-large uk-padding">Individuālu pieeju katram klientam un projektam.</div>
             </div>
             <div>
-                <div class="uk-card-body uk-card-secondary">Ātru un efektīvu produkta piegādi jau sākuma ciklā.</div>
+                <div class="uk-card-body uk-card-secondary uk-box-shadow-hover-large uk-padding">Ātru un efektīvu produkta piegādi jau sākuma ciklā.</div>
             </div>
         </div>
     </div>
@@ -97,7 +97,6 @@ include __DIR__ . 'DBdata.php';
                     <ul class="uk-list uk-list-striped">
                         <li>HTML5: <strong>Junior</strong></li>
                         <li>CSS: <strong>Junior</strong></li>
-                        <li>UIKIT: <strong>Beginner</strong></li>
                         <li>BOOTSTRAP: <strong>Junior</strong></li>
                     </ul>
                 </div>
@@ -127,8 +126,8 @@ include __DIR__ . 'DBdata.php';
             </div>
             <div>
                 <div class="uk-card uk-card-default uk-card-body">
-                    <h3 class="uk-card-title">RIGA CODING SCHOOL</h3>
-                    <p>WEB BOOTCAMP kursi - PROCESĀ</p>
+                    <h3 class="uk-card-title">RIGACODINGSCHOOL</h3>
+                    <p>WEB BOOTCAMP kursi - Teoretiskās un praktiskās zināšanas WEB izstrādē. 90 stundas, 2021. gadā</p>
                 </div>
             </div>
 
@@ -137,24 +136,50 @@ include __DIR__ . 'DBdata.php';
     </div>
     <div id="reviews" class="container-fluid fullHeight">
         <h1 class="uk-heading-divider ">Atsauksmes</h1>
-        <div class="uk-child-width-1-2@s" uk-grid uk-scrollspy="cls: uk-animation-slide-top; target: .uk-card; delay: 300; repeat: false">
+        <div uk-grid>
+            <div class="uk-width-1-2@s ">
+                <div class="uk-slider-container-offset" uk-slider="autoplay: true">
 
-            <form action="api.php" onsubmit="postRequest(event, this, addNewReview);" class="uk-card">
-                <fieldset class="uk-fieldset">
-                    <div class="uk-margin">
-                        <input class="uk-input" type="text" name="name" placeholder="Vārds" required>
-                    </div>
-                    <div class="uk-margin">
-                        <textarea class="uk-textarea" rows="5" name="review" placeholder="Atsauksme..." required></textarea>
-                    </div>
-                </fieldset>
-                <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Submit</button>
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-            </form>
-            <div>
-                <div class="uk-margin-medium uk-card uk-card-default uk-card-body">Pagaidām nav nevienas atsauksmes...</div>
+                        <ul class="uk-slider-items uk-child-width-1-1@s uk-grid" id="review_list">
+                            <li class="template">
+                                <div class="uk-card uk-card-default">
+                                    <div class="uk-card-body">
+                                        <h3 class="uk-card-title author">Headline</h3>
+                                        <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+                    </div>
+
+                    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+                </div>
+            </div>
+            <div class="uk-width-1-2@s">
+                <form action="/controller/api.php" onsubmit="postRequest(event, this, addNewReview);" class="uk-card">
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" name="name" placeholder="Vārds" required>
+                        </div>
+                        <div class="uk-margin">
+                            <textarea class="uk-textarea" rows="5" name="review" placeholder="Raksti savu atsauksmi šeit" required></textarea>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Iesniegt</button>
+
+                </form>
             </div>
         </div>
+
+
+
     </div>
 
     <div id="contact" class="container-fluid fullHeight">
@@ -165,7 +190,7 @@ include __DIR__ . 'DBdata.php';
             <div>
                 <div class="uk-card uk-card-default uk-card-body">
                     <h3 class="uk-card-title">Rakstīt ziņu...</h3>
-                    <form action="api.php" onsubmit="postRequest(event, this, addNewMessage);">
+                    <form action="/controller/api.php" onsubmit="postRequest(event, this, addNewMessage);">
                         <fieldset class="uk-fieldset">
                             <div class="uk-margin">
                                 <input class="uk-input" type="email" name="e-mail" placeholder="E-pasts" required>
@@ -174,7 +199,7 @@ include __DIR__ . 'DBdata.php';
                                 <textarea class="uk-textarea" rows="5" name="message" placeholder="Jautājums.." required></textarea>
                             </div>
                         </fieldset>
-                        <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Submit</button>
+                        <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Iesniegt</button>
 
                     </form>
                 </div>
@@ -186,9 +211,9 @@ include __DIR__ . 'DBdata.php';
                     <div class="uk-text-left uk-child-width-1-2@s" uk-grid>
                         <div>
                             <div class="uk-card">
-                                <span uk-icon=" icon: mail; ratio: 3"></span><a class="uk-link-heading" href="mailto:aleksejs@pavlovs.lv"> Email me</a><br>
+                                <span uk-icon="icon: mail; ratio: 3"></span><a class="uk-link-heading" href="mailto:aleksejs@pavlovs.lv"> Email</a><br>
 
-                                <span uk-icon="icon: whatsapp; ratio: 3"></span><a class="uk-link-heading" href="https://wa.me/+37125994741"> Whatsapp me</a><br>
+                                <span uk-icon="icon: whatsapp; ratio: 3"></span><a class="uk-link-heading" href="https://wa.me/+37125994741"> Whatsapp</a><br>
 
                                 <span uk-icon="icon:  github-alt; ratio: 3"></span><a class="uk-link-heading" href="https://github.com/prokurists"> GitHub</a><br>
 
@@ -214,11 +239,15 @@ include __DIR__ . 'DBdata.php';
 
     </div>
 
-    <a class="to-top" href="" uk-totop></a>
+    <div class="uk-padding-large">
+        <div class="uk-text-center">Created by Aleksejs Pavlovs 2021</div>
 
+    </div>
+    <a class="to-top" href="#profils" uk-totop></a>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
     <script src="assets/javascript/javascript.js"></script>
+
 </body>
 
 </html>

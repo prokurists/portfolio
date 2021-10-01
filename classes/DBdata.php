@@ -69,6 +69,32 @@ class DBdata
         }
     }
 
+    public function getAll()
+    {
+        $sql = "SELECT * FROM reviews WHERE active='1'";
+        $result = $this->conn->query($sql);
+
+        if ($result === false) {
+            return [
+                'status' => false
+            ];
+        } elseif ($result->num_rows > 0) {
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+
+            return [
+                'entities' => $data,
+                'status' => true
+            ];
+        } else {
+            return [
+                'entities' => [],
+                'status' => true
+            ];
+        }
+    }
+
+
+
     function test_input($data)
     {
         $data = trim($data);

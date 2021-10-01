@@ -1,5 +1,5 @@
 <?php
-include_once "DBdata.php";
+include_once __DIR__ . "/../classes/DBdata.php";
 $DBdata = new DBdata();
 
 
@@ -20,6 +20,10 @@ if (
     !empty($_POST['message'])
 ) {
     $output = $DBdata->addMessage($_POST['e-mail'], $_POST['message']);
+}
+
+if ($_REQUEST['api'] === 'getreviews') {
+    $output = $DBdata->getAll();
 }
 
 echo json_encode($output, JSON_PRETTY_PRINT);

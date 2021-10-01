@@ -1,5 +1,5 @@
 var h = 0;
-var hello = "Sveiki, mani sauc Aleksejs Pavlovs";
+var hello = "PAVLOVS.LV";
 var speed = 100;
 
 document.body.onload = function typeWriter() {
@@ -67,4 +67,33 @@ function addNewMessage(response, form) {
 
     }
 }
+
+
+getRequest('/controller/api.php?api=getreviews', function (response) {
+    for (const [id, data] of Object.entries(response.entities) ) {
+        displayComment(id, data);
+    }
+    document.getElementsByClassName('template')[0].remove();
+
+});
+
+function displayComment(id, data) {
+    let review_block = document.querySelector('#review_list'),
+        template = document.querySelector('.template'),
+        new_review = template.cloneNode(true);
+
+        let description = new_review.querySelector('.review');
+        description.textContent = data.review;
+    
+        let author = new_review.querySelector('.author');
+        author.textContent = data.email;
+        
+        new_review.classList.remove('template');
+
+
+
+        review_block.prepend(new_review);
+
+}
+
 
